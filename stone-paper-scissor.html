@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rock Paper Scissor</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="stone-paper-scissor.css">
+    <script src="stone-paper-scissor.js"></script>
+  </head>
+  <body>
+    <div class="container" style="text-align: center; width: 300px; margin-top: 30vh;">
+      <div class="heading" style="text-align: center">
+        <h2>Rock Paper Scissor</h2>
+      </div>
+      <div class="sps">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="
+    r1 = sps()
+    if (r1 === 'Paper') {
+      score.losses = score.losses + 1;
+      console.log(score);
+      alert(`You picked Rock and Computer picked ${r1}. You lost!`);
+    } else if (r1 === 'Rock') {
+      score.tie = score.tie + 1;
+      console.log(score);
+      alert(`You picked Rock and Computer picked ${r1}. Tie!`);
+    } else if (r1 === 'Scissors') {
+      score.win = score.win + 1;
+      console.log(score);
+      alert(`You picked Rock and Computer picked ${r1}. You won!`);
+    }
+    localStorage.setItem('score', JSON.stringify(score));
+    "
+        >
+          Rock
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="
+    r1 = sps();
+    if (r1 === 'Scissors') {
+      score.losses = score.losses + 1;
+      console.log(score);
+      alert(`You picked Paper and Computer picked ${r1}. You lost!`);
+    } else if (r1 === 'Paper') {
+      score.tie = score.tie + 1;
+      console.log(score);
+      alert(`You picked Paper and Computer picked ${r1}. Tie!`);
+    } else if (r1 === 'Rock') {
+      score.win = score.win + 1;
+      console.log(score);
+      alert(`You picked Paper and Computer picked ${r1}. You won!`);
+    }
+    localStorage.setItem('score', JSON.stringify(score));
+    "
+        >
+          Paper
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="
+      r1 = sps()
+      if (r1 === 'Rock') {
+      score.losses = score.losses + 1;
+      console.log(score);
+      alert(`You picked Scissors and Computer picked ${r1}. You lost!`);
+      } else if (r1 === 'Scissors') {
+      score.tie = score.tie + 1;
+      console.log(score);
+      alert(`You picked Scissors and Computer picked ${r1}. Tie!`);
+      } else if (r1 === 'Paper') {
+      score.win = score.win + 1;
+      console.log(score);
+      alert(`You picked Scissors and Computer picked ${r1}. You won!`);
+      }
+      localStorage.setItem('score', JSON.stringify(score));
+    "
+        >
+          Scissor
+        </button>
+      </div>
+      <div class="controls" style="text-align: center">
+        <button
+          class="btn btn-secondary"
+          onclick="
+      score.win = 0;
+      score.tie = 0;
+      score.losses = 0;
+      console.clear();
+      console.log('Score was reset.');
+      console.log(score);
+      localStorage.removeItem('score');
+    "
+        >
+          Reset Score
+        </button>
+        <button
+          class="btn btn-secondary"
+          onclick="
+      console.clear();
+      console.log(score);
+    "
+        >
+          Show Score
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
