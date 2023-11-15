@@ -1,9 +1,8 @@
-if (score === null) {
-  score = {
-    win: 0,
-    tie: 0,
-    losses: 0,
-  };
+let score;
+score = JSON.parse(localStorage.getItem("score")) || {
+  win: 0,
+  tie: 0,
+  losses: 0,
 };
 function sps() {
   const randomNum = Math.random();
