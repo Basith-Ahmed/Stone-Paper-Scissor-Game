@@ -104,7 +104,7 @@ function onclickShowScore() {
 function updateScoreElement() {
   document.querySelector(
     ".js-score"
-  ).innerHTML = `<span class="win">Wins</span>: ${score.win}, <span class="loss">Losses</span>: ${score.losses}, <span class="tie">Ties</span>: ${score.tie}`;
+  ).innerHTML = `<span class="win">Wins</span>: ${score.win}, <span class="tie">Ties</span>: ${score.tie}, <span class="loss">Losses</span>: ${score.losses}`;
 }
 function updateMoveElement(result) {
   document.querySelector('.js-move-info').innerHTML = result;
