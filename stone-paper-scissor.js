@@ -89,10 +89,13 @@ function onclickResetScore() {
       score.tie = 0;
       score.losses = 0;
       console.clear();
-      console.log('Score was reset.');
+      result = 'Score was reset.';
+      console.log(result);
       console.log(score);
       localStorage.removeItem('score');
       updateScoreElement();
+      updateMoveElement(result)
+
 }
 function onclickShowScore() {
       console.clear();
