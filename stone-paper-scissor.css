@@ -1,0 +1,16 @@
+h2,
+button {
+  margin-top: 10px;
+}
+
+.sps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
