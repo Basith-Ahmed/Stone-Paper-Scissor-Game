@@ -100,6 +100,7 @@ function onclickResetScore() {
 function onclickShowScore() {
       console.clear();
       console.log(score);
+      alert(`Wins: ${score.win}, Ties: ${score.tie}, Losses: ${score.losses}`)
 }
 function updateScoreElement() {
   document.querySelector(
