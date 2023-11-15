@@ -19,15 +19,18 @@ function onclickRock() {
     if (r1 === 'Paper') {
       score.losses = score.losses + 1;
       console.log(score);
-      alert(`You picked Rock and Computer picked ${r1}. You lost!`);
+      let result = `You picked Rock and Computer picked ${r1}. You lost!`
+      alert(result);
     } else if (r1 === 'Rock') {
       score.tie = score.tie + 1;
       console.log(score);
-      alert(`You picked Rock and Computer picked ${r1}. Tie!`);
+      let result = `You picked Rock and Computer picked ${r1}. Tie!`
+      alert(result);
     } else if (r1 === 'Scissors') {
       score.win = score.win + 1;
       console.log(score);
-      alert(`You picked Rock and Computer picked ${r1}. You won!`);
+      let result = `You picked Rock and Computer picked ${r1}. You won!`
+      alert(result);
     }
     localStorage.setItem('score', JSON.stringify(score));
 }
