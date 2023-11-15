@@ -14,3 +14,12 @@ button {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
+.win {
+  color: red;
+}
+.loss {
+  color: rgb(2, 173, 2);
+}
+.tie {
+  color: rgb(216, 168, 10);
+}

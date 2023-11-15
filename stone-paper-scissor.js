@@ -14,22 +14,26 @@ function sps() {
     return "Scissors";
   }
 }
+scoreInfoElement = document.querySelector('.js-score-info').innerHTML;
 function onclickRock() {
     r1 = sps()
     if (r1 === 'Paper') {
       score.losses = score.losses + 1;
       console.log(score);
       let result = `You picked Rock and Computer picked ${r1}. You lost!`
+      updateScoreElement();
       alert(result);
     } else if (r1 === 'Rock') {
       score.tie = score.tie + 1;
       console.log(score);
       let result = `You picked Rock and Computer picked ${r1}. Tie!`
+      updateScoreElement();
       alert(result);
     } else if (r1 === 'Scissors') {
       score.win = score.win + 1;
       console.log(score);
       let result = `You picked Rock and Computer picked ${r1}. You won!`
+      updateScoreElement();
       alert(result);
     }
     localStorage.setItem('score', JSON.stringify(score));
@@ -39,15 +43,21 @@ function onclickPaper() {
     if (r1 === 'Scissors') {
       score.losses = score.losses + 1;
       console.log(score);
-      alert(`You picked Paper and Computer picked ${r1}. You lost!`);
+      updateScoreElement();
+      let result = `You picked Paper and Computer picked ${r1}. You lost!`
+      alert(result);
     } else if (r1 === 'Paper') {
       score.tie = score.tie + 1;
       console.log(score);
-      alert(`You picked Paper and Computer picked ${r1}. Tie!`);
+      updateScoreElement();
+      let result = `You picked Paper and Computer picked ${r1}. Tie!`
+      alert(result);
     } else if (r1 === 'Rock') {
       score.win = score.win + 1;
       console.log(score);
-      alert(`You picked Paper and Computer picked ${r1}. You won!`);
+      updateScoreElement();
+      let result = `You picked Paper and Computer picked ${r1}. You won!`
+      alert(result);
     }
     localStorage.setItem('score', JSON.stringify(score));
 }
@@ -56,15 +66,21 @@ function onclickScissor() {
     if (r1 === 'Rock') {
       score.losses = score.losses + 1;
       console.log(score);
-      alert(`You picked Scissors and Computer picked ${r1}. You lost!`);
+      updateScoreElement();
+      let result = `You picked Scissors and Computer picked ${r1}. You lost!`
+      alert(result);
     } else if (r1 === 'Scissors') {
       score.tie = score.tie + 1;
       console.log(score);
-      alert(`You picked Scissors and Computer picked ${r1}. Tie!`);
+      updateScoreElement();
+      let result = `You picked Scissors and Computer picked ${r1}. Tie!`
+      alert(result);
     } else if (r1 === 'Paper') {
       score.win = score.win + 1;
       console.log(score);
-      alert(`You picked Scissors and Computer picked ${r1}. You won!`);
+      updateScoreElement();
+      let result = `You picked Scissors and Computer picked ${r1}. You won!`
+      alert(result);
     }
     localStorage.setItem('score', JSON.stringify(score));
 }
@@ -76,8 +92,14 @@ function onclickResetScore() {
       console.log('Score was reset.');
       console.log(score);
       localStorage.removeItem('score');
+      updateScoreElement();
 }
 function onclickShowScore() {
       console.clear();
       console.log(score);
+}
+function updateScoreElement() {
+  document.querySelector(
+    ".js-score"
+  ).innerHTML = `<span class="win">Wins</span>: ${score.win}, <span class="loss">Losses</span>: ${score.losses}, <span class="tie">Ties</span>: ${score.tie}`;
 }
